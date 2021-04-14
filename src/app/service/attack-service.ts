@@ -1,47 +1,59 @@
 import {dataAttack} from "../data/data-attack";
+import AttackModel from "../model/attack.model";
 
 export default class AttackService {
 
     private static _instance: AttackService;
     private attackSelected: string = "";
+    // Array of all attacks
     private arrayAttack: object[] = dataAttack;
+    private arrayAttackTEMP: object[] = dataAttack;
+    // Computer Attack
+    private computerObj: AttackModel = {name: "", lose: [], inGame: true};
 
     public static get Instance()
     {
         return this._instance || (this._instance = new this());
-    }
+    };
 
     public getAttackSelected() {
         return this.attackSelected;
-    }
+    };
 
     public setAttackSelected(value: string) {
         this.attackSelected = value;
-    }
+    };
 
     public getArrayAttack() {
-        return this.arrayAttack;
-    }
+        return this.arrayAttackTEMP;
+    };
 
     public setArrayAttack(value: any) {
-        // console.log('value: ', value)
-        // console.log(this.arrayAttack);
-        let track = undefined;
-        this.arrayAttack.forEach((e) => {
-            if(e === value) {
-               return track = 1 ;
+        this.arrayAttackTEMP = [];
+        console.log(this.arrayAttackTEMP)
+        this.arrayAttack.forEach((obj: any) => {
+            if(obj === value ) {
+                if(obj.inGame === true) {
+                    obj.inGame = false;
+                } else {
+                    obj.inGame = true;
+                }
             }
         });
 
-        if (track === 1) {
-            let position = this.arrayAttack.indexOf(value);
-            // console.log(position);
-            this.arrayAttack.splice(position, 1);
-        } else {
-            this.arrayAttack.push(value);
-        }
-        // console.log(this.arrayAttack);
+        this.arrayAttack.forEach((obj:any) => {
+          if(obj.inGame === true ) {
+              this.arrayAttackTEMP.push(obj)
+          }
+        });
+        console.log(this.arrayAttackTEMP)
+    };
 
+    public setComputerObj(value: AttackModel) {
+        this.computerObj = value;
+    };
+    public getComputer(): string {
+        return <string>this.computerObj.name;
+    };
 
-    }
 }

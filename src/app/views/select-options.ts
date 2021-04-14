@@ -4,24 +4,29 @@ import {dataAttack} from "../data/data-attack";
 
 export default class SelectOptions {
 
+    //                     [Math.round(Math.random() * (this.arrayAttack.length - 1))]
+
     private elt = new ElementHTML();
 
     constructor() {
         this.listener();
         this.valid();
-    }
+    };
 
     private valid() {
         this.elt.valid!.addEventListener("click", () => {
             this.elt.selectOption?.classList.add('ninja');
             this.elt.game?.classList.remove('ninja');
             this.elt.valid?.classList.add('ninja')
-            this.elt.messages!.innerHTML = "Start Game";
-        })
-    }
+            this.elt.messages!.innerHTML = "Good luck 🍀";
+            this.elt.messages!.classList.remove("ninja");
+            const computer: any = AttackService.Instance.getArrayAttack()[Math.round(Math.random() * (AttackService.Instance.getArrayAttack().length - 1))];
+            AttackService.Instance.setComputerObj(computer)
+        });
+    };
 
     private listener() {
-        this.elt.btnSelect.forEach((event: any ) => {
+        this.elt.btnSelect.forEach((event: any) => {
             event.addEventListener('click', () => {
                 let allBtnElt = document.querySelector(`[data-id-game = "${event.dataset.id}"]`);
                 if (allBtnElt!.classList.contains("ninja")) {
@@ -34,11 +39,9 @@ export default class SelectOptions {
                     event.style.color = "white";
                 }
                 AttackService.Instance.setArrayAttack(dataAttack[event.dataset.id]);
-                console.log(event.dataset.id)
-                console.log("Select ",dataAttack[3])
             });
         });
-    }
+    };
 
 
 }

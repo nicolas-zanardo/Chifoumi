@@ -20,9 +20,16 @@ header {
 }
 
 main {
-    height: 20vh;
+    height: 15vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5rem;
+    transition: 0.3s;
+
 }
 
 footer {
@@ -70,5 +77,31 @@ button {
     }
 }
 
+.reload {
+    text-align: center;
+    max-height: 1rem;
+    display: block;
+    padding: 2rem 4rem;
+    background-color: blueviolet;
+    color: white;
+    box-shadow: 1px 1px 2px 0px  rgb(black, 0.5);
+    cursor: pointer;
+    transition: 300ms;
+    border-radius: 0 3rem 0 3rem;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
 
+.messages {
+    font-size: 1.5rem;
+    background: white;
+    padding: 2rem 5rem;
+    margin: 2rem;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px 0px  rgb(black, 0.5);
+}
 
+.result {
+    font-size: 2rem;
+}
