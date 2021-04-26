@@ -2,10 +2,6 @@
 
 ## EXERCICE 3
 
-### Enoncé Chifoumi
-
-L'utilisateur choisit dans un prompt du navigateur pierre, feuille ou ciseau, l'ordinateur choisit aléatoirement l'une des trois possibilités, et la partie commence !
-
 ## Remarques
 Le ciseau est écrasé par la pierre.
 La feuille est découpée par le ciseau.

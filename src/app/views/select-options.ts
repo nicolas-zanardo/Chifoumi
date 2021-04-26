@@ -4,14 +4,18 @@ import {dataAttack} from "../data/data-attack";
 
 export default class SelectOptions {
 
-    //                     [Math.round(Math.random() * (this.arrayAttack.length - 1))]
-
     private elt = new ElementHTML();
+    private countOptionSelectedByPlayer!: number;
 
     constructor() {
+        this.onInit()
         this.listener();
         this.valid();
     };
+
+    private onInit() {
+        this.countOptionSelectedByPlayer = document.querySelectorAll(".btn-select").length;
+    }
 
     private valid() {
         this.elt.valid!.addEventListener("click", () => {
@@ -30,15 +34,21 @@ export default class SelectOptions {
             event.addEventListener('click', () => {
                 let allBtnElt = document.querySelector(`[data-id-game = "${event.dataset.id}"]`);
                 if (allBtnElt!.classList.contains("ninja")) {
+                    this.countOptionSelectedByPlayer++
                     allBtnElt!.classList.remove("ninja");
                     event.style.backgroundColor = "whitesmoke";
                     event.style.color = "black";
+                    AttackService.Instance.setArrayAttack(dataAttack[event.dataset.id]);
                 } else {
-                    allBtnElt!.classList.add("ninja");
-                    event.style.backgroundColor = "red";
-                    event.style.color = "white";
+                    if(this.countOptionSelectedByPlayer > 1) {
+                        this.countOptionSelectedByPlayer--
+                        allBtnElt!.classList.add("ninja");
+                        event.style.backgroundColor = "red";
+                        event.style.color = "white";
+                        AttackService.Instance.setArrayAttack(dataAttack[event.dataset.id]);
+                    }
                 }
-                AttackService.Instance.setArrayAttack(dataAttack[event.dataset.id]);
+                this.elt.selectedOptionToPlay!.innerHTML = `${this.countOptionSelectedByPlayer}`;
             });
         });
     };

@@ -9,21 +9,35 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
+    //justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: #e3e3e3;
 }
 
 header {
-    height: 20vh;
+    width: 90%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    background: linear-gradient(.25turn, #3b11b6, #6e00c9) ;
+    color :whitesmoke;
+    font-family: 'Original Surfer', cursive;
+    box-shadow: 0 5px 10px 4px rgba(83, 83, 83, 0.29);
+    border: 10px solid whitesmoke;
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 1rem 2rem;
 }
 
 main {
-    height: 15vh;
+    max-width: 100%;
+    margin: 1rem;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 h1 {
@@ -32,41 +46,60 @@ h1 {
 
 }
 
-footer {
-    height: 60vh;
-    display: flex;
-    justify-content: center;
+
+
+button.btn-select, button.btn-game {
+    padding: 3rem;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 button {
+    font-size: 2rem;
     outline: none;
     cursor: pointer;
     background: whitesmoke;
     padding: 2rem;
-    margin: 1rem;
+    margin: 2rem 1rem 1rem 1rem;
     border-radius: 1rem;
     border: none;
     box-shadow: 1px 1px 2px 0px  rgb(black, 0.5);
     transition: 0.3s;
-    &:hover {
-        transform: scale(1.1);
-    }
 }
 
 .ninja {
     display: none !important;
 }
 
-.select-option game{
+.select-option, .game{
     padding: 1rem;
     margin: 1rem;
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.valid-option {
-    max-height: 1rem;
-    display: block;
+.select-option strong {
+    color: indigo;
+}
+
+.btn-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valid-option, .reload {
+    max-height: 5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2rem 4rem;
-    background-color: indigo;
     color: white;
     box-shadow: 1px 1px 2px 0px  rgb(black, 0.5);
     cursor: pointer;
@@ -77,31 +110,62 @@ button {
     }
 }
 
+.valid-option {
+    background-color: indigo;
+}
 .reload {
-    text-align: center;
-    max-height: 1rem;
-    display: block;
-    padding: 2rem 4rem;
+    margin: 5rem;
     background-color: blueviolet;
-    color: white;
-    box-shadow: 1px 1px 2px 0px  rgb(black, 0.5);
-    cursor: pointer;
-    transition: 300ms;
-    border-radius: 0 3rem 0 3rem;
-    &:hover {
-        transform: scale(1.1);
-    }
 }
 
 .messages {
-    font-size: 1.5rem;
-    background: white;
+    background: #6da521;
+    color: whitesmoke;
     padding: 2rem 5rem;
     margin: 2rem;
+    font-size: 3rem;
     border-radius: 15px;
     box-shadow: 1px 1px 2px 0px  rgb(black, 0.5);
 }
 
+.finish-message {
+    background: linear-gradient(217deg, rgba(208, 202, 202, 0.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(231, 231, 231, 0.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(206, 206, 206, 0.8), rgba(0,0,255,0) 70.71%);
+}
+
 .result {
+    text-align: center;
+    font-size: 4rem;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.display-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-options {
     font-size: 2rem;
+    background: whitesmoke;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.github {
+    display: flex;
+}
+
+.github img {
+    height: 4rem;
+}
+
+.git-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

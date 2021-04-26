@@ -30,8 +30,7 @@ export default class AttackService {
 
     public setArrayAttack(value: any) {
         this.arrayAttackTEMP = [];
-        console.log(this.arrayAttackTEMP)
-        this.arrayAttack.forEach((obj: any) => {
+          this.arrayAttack.forEach((obj: any) => {
             if(obj === value ) {
                 if(obj.inGame === true) {
                     obj.inGame = false;
@@ -46,7 +45,6 @@ export default class AttackService {
               this.arrayAttackTEMP.push(obj)
           }
         });
-        console.log(this.arrayAttackTEMP)
     };
 
     public setComputerObj(value: AttackModel) {

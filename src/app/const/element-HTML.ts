@@ -8,6 +8,7 @@ export default class ElementHTML {
     public result: HTMLElement | null = document.querySelector(".result");
     public reload: HTMLElement | null = document.querySelector(".reload");
     public response: HTMLElement | null = document.querySelector(".response");
+    public  selectedOptionToPlay: HTMLElement | null = document.querySelector(".select-option strong")
     // button
     public btnGame: NodeListOf<Element> = document.querySelectorAll(".btn-game")
     public btnSelect: NodeListOf<Element> = document.querySelectorAll('.btn-select');

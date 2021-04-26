@@ -7,13 +7,18 @@ export default class Attacks {
     private elt = new ElementHTML();
     public data = dataAttack;
 
-    public display(message: string) {
+    public display(message: string, color?: string) {
         this.elt.result!.innerHTML = message;
         this.elt.game!.classList.add("ninja");
         this.elt.computer!.innerHTML = `Adversaire: <strong>${AttackService.Instance.getComputer()}</strong>`;
         this.elt.reload!.classList.remove("ninja");
         this.elt.messages!.classList.add('ninja');
         this.elt.response!.classList.remove("ninja");
+        this.elt.result!.classList.add("finish-message")
+        if(color){
+            this.elt.yourChoice!.style.backgroundColor = color;
+            this.elt.yourChoice!.style.color = "white"
+        }
 
     }
 
@@ -36,9 +41,9 @@ export default class Attacks {
 
     public result(value: number | null) {
         if(value === 1 ) {
-            return this.display("You Lose 😞");
+            return this.display("You Lose 😞", "red");
         } else {
-            return this.display("You Win 🎉");
+            return this.display("You Win 🎉", "green");
         }
     };
 
