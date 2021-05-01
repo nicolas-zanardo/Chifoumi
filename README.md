@@ -25,9 +25,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/St
 
 ## Exercice réalisé avec Webpack et TypeScript
 
-Demo: https://stackblitz.com/edit/fizzbuzz-ifocop?file=index.ts
 
-GitHub: https://github.com/nicolas-zanardo/fizzbuzz-ifocop
 
 ``` bash
 npm install
