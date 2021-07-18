@@ -5,10 +5,32 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Chifoumi</title>
+    <style>
+        #spinner {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100000;
+            min-height: 100vh;
+            min-width: 100%;
+            background-color: white;
+
+        }
+        #modal {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-
+<div id="spinner">
+    <div id="modal" class="flex-column">
+        <img src="./assets/spinner.gif" alt="chifoumi" height="300">
+    </div>
+</div>
 <header>
     <!--  title-->
     <h1>Chifoumi</h1>
@@ -24,10 +46,10 @@
     <div class="select-option">
         <div class="message-options">Vous jouez avec <strong>4</strong> options</div>
         <div class="btn-block">
-            <button class="btn-select" data-name="ciseau" data-id="0">ciseau</button>
-            <button class="btn-select" data-name="feuille" data-id="1">feuille</button>
-            <button class="btn-select" data-name="pierre" data-id="2">pierre</button>
-            <button class="btn-select" data-name="puit" data-id="3">puit</button>
+            <button class="btn-select" data-name="ciseau" data-id="0">ciseau ✂</button>
+            <button class="btn-select" data-name="feuille" data-id="1">feuille 🍁</button>
+            <button class="btn-select" data-name="pierre" data-id="2">pierre 🧱</button>
+            <button class="btn-select" data-name="puit" data-id="3">puit 🕳</button>
         </div>
     </div>
 
@@ -35,10 +57,10 @@
     <!--    Game-->
     <div class="game ninja">
         <div>
-            <button class="btn-game" data-name-game="ciseau" data-id-game="0">ciseau</button>
-            <button class="btn-game" data-name-game="feuille" data-id-game="1">feuille</button>
-            <button class="btn-game" data-name-game="pierre" data-id-game="2">pierre</button>
-            <button class="btn-game" data-name-game="puit" data-id-game="3">puit</button>
+            <button class="btn-game" data-name-game="ciseau" data-id-game="0">ciseau ✂</button>
+            <button class="btn-game" data-name-game="feuille" data-id-game="1">feuille 🍁</button>
+            <button class="btn-game" data-name-game="pierre" data-id-game="2">pierre 🧱</button>
+            <button class="btn-game" data-name-game="puit" data-id-game="3">puit 🕳</button>
         </div>
     </div>
 

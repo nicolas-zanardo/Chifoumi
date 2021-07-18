@@ -32,11 +32,7 @@ export default class AttackService {
         this.arrayAttackTEMP = [];
           this.arrayAttack.forEach((obj: any) => {
             if(obj === value ) {
-                if(obj.inGame === true) {
-                    obj.inGame = false;
-                } else {
-                    obj.inGame = true;
-                }
+                obj.inGame = obj.inGame !== true;
             }
         });
 

@@ -24,7 +24,7 @@ export default class SelectOptions {
             this.elt.valid?.classList.add('ninja')
             this.elt.messages!.innerHTML = "Good luck 🍀";
             this.elt.messages!.classList.remove("ninja");
-            const computer: any = AttackService.Instance.getArrayAttack()[Math.round(Math.random() * (AttackService.Instance.getArrayAttack().length - 1))];
+            const computer: object = AttackService.Instance.getArrayAttack()[Math.round(Math.random() * (AttackService.Instance.getArrayAttack().length - 1))];
             AttackService.Instance.setComputerObj(computer)
         });
     };
@@ -40,7 +40,7 @@ export default class SelectOptions {
                     event.style.color = "black";
                     AttackService.Instance.setArrayAttack(dataAttack[event.dataset.id]);
                 } else {
-                    if(this.countOptionSelectedByPlayer > 1) {
+                    if(this.countOptionSelectedByPlayer > 2) {
                         this.countOptionSelectedByPlayer--
                         allBtnElt!.classList.add("ninja");
                         event.style.backgroundColor = "red";
